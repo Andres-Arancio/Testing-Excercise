@@ -15,6 +15,13 @@ public class DateFormatter
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
     public static string ChangeFormat(string date)
     {
-        return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        if(date.Length == 9 && date.Substring(2,2) == "/" && date.Substring(5,5) == "/" && Int32.Parse(date.Substring(3,2)) <= 12 && Int32.Parse(date.Substring(0,2)) <= 31)
+        {
+            return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        }
+        else
+        {
+            return "ERROR";
+        }
     }
 }
