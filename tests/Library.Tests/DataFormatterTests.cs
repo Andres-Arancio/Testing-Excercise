@@ -27,7 +27,7 @@ public class Tests
     
     /*
     <summary>
-    A falta de una excepcion, idealmente si el formato es incorrecto, el resultado va a ser "null"
+    A falta de una excepcion, idealmente si el formato es incorrecto, el resultado va a ser "ERROR"
     </summary>
     <value>date = string invalida que coloquialmente representa una fecha</value>
     */
@@ -39,6 +39,12 @@ public class Tests
         Assert.AreEqual(expectedresult, DateFormatter.ChangeFormat(date));
     }
     
+    /*
+    <summary>
+    A falta de una excepcion, idealmente si la fecha es null, el resultado va a ser "ERROR"
+    </summary>
+    <value>date = string vacia</value>
+    */
     [Test]
     public void DataFormatterTestBlank()
     {
